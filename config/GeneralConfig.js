@@ -1,5 +1,6 @@
 global.handlebars = require("express-handlebars")
 global.bodyParser = require("body-parser")
+global.MovieDB = require('moviedb')('2ad68eb33d65b9eb718d5ca88fbb7b45');
 var RoutesGet = require("../controller/RoutesGet")
 var RoutesPost = require("../controller/RoutesPost")
 
