@@ -1,0 +1,10 @@
+git config --global user.name "andre"
+git config --global user.email "andremarcinichen@hotmail.com"
+cd ..
+cd ..
+cd c:/xampp/htdocs/andre_ramos/Site-Filmes
+git pull
+git add .
+git commit -m "Filmes"
+git push
+git status
