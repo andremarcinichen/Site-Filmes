@@ -12,26 +12,39 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Condado Luderia</a>
+                <a class="navbar-brand">Meu site de Filmes!</a>
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                     <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a href="/" class="btn btn-secondary ml-3" >Home</a>
+                        <li class="nav-item mt-3">
+                            <a href="/" class="btn btn-secondary ml-3 mb-3" >Rated Top 10</a>
                         </li>
-                        <li class="nav-item">
-                            <a href="/formulario" class="btn btn-dark ml-3">Cadastro</a>
+                        <li>
+                            
                         </li>
-                    </ul>
+                     </ul>
                 </div>
+                <a class="m-3">Pesquise seu filme:</a>
+                <form action="/searchtitle" method="POST">
+                    <div>
+                        <input class="form-control" type="text" name="movieFindtitle" placeholder="digite seu filme">
+                    </div>
+                    <div>
+                        <button type="submit" id="myBtn">Pesquisar</button>
+                    </div>                               
+                </form>
             </div>
+
         </nav>
+
     </header>
-    <main>
+    <main class="mb-5">
         {{{body}}}
     </main>
-    <footer class="border-top footer text-muted">
+    <footer class="border-top footer text-muted fixed-bottom bg-light">
         <div class="container">
             Conteudo privado copyright 2020
+            <br>
+            <br>
         </div>
     </footer>
 </body>

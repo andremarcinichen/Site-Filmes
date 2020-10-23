@@ -1,1 +1,31 @@
-home do site
+<div class="container mt-5">
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th scope="col">Rank</th>
+				<th scope="col">Titulo</th>
+				<!-- <th scope="col">Nota</th>  -->
+				<th scope="col">Resumo</th>
+				<th scope="col">Favorito</th>
+			</tr>
+		</thead>
+		<tbody>
+			{{#each movieFoundTitle}}
+		    <tr>
+		    	<td>{{inc @index}}</td>
+				<td>{{this}}</td>
+				<!-- <td>{{movieFoundvote}}</td> -->
+				<td>
+					<a href="" class="btn btn-danger">Informaçoes</a>
+				</td>
+				<td>
+					<div class="custom-control custom-checkbox ">
+					  <input type="checkbox" class="custom-control-input" id="customCheck{{@index}}">
+					  <label class="custom-control-label" for="customCheck{{@index}}"></label>
+					</div>
+				</td>
+		    </tr>
+		    {{/each}}
+		</tbody>
+	</table>
+</div>

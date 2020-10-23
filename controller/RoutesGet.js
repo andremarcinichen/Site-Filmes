@@ -1,28 +1,17 @@
 //Rotas get
+var movieFoundTitle=[];
+var movieFoundvote=[];
+
 app.get('/', function(req, res){
-	res.render("index")
-})
-
-app.get("/formulario", function(req, res){
-	res.render("formulario");
-})
-
-app.get("/tabela", function(req, res){
-	userinfo.findAll({order: [["firstname", "ASC"]]}).then(function(userinfo){
-		res.render("userinfo", {usuarios: usuarios})
-	})
-})
-
-app.get("/usuario/:id", function(req, res){
-	userinfo.findOne({where: {"id": req.params.id}}).then((userinfo) =>{
-		res.render("userinfo", {usuario: usuario})
-	})
-})
-
-app.get("/delete/:id", function(req, res){
-	userinfo.destroy({where: {"id": req.params.id}}).then(function(){
-		res.send("Usuário removido com sucesso")
+	moviedb.movieTopRated({language:'pt'}).then(resp => {
+		for (var i = 0; i < 10; i++) {
+			movieFoundTitle[i] = String(resp.results[i].title)
+			movieFoundvote[i] = String(resp.results[i].vote_average)
+		}
+		res.render("index",{movieFoundTitle,movieFoundvote})
+		return movieFoundTitle,movieFoundvote
 	}).catch(function(erro){
-		res.send("Erro: " + erro)
+		res.send("Não foi possível encontrar seu filme, erro: " + erro)
 	})
+	
 })
