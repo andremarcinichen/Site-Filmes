@@ -1,14 +1,15 @@
 //rotas post
 global.movieFind = []
 global.movieSearchFoundTitle =[]
-var x =[]
+var x = []
+
 app.post("/searchtitle", function(req, res){
 	movieFind={
 		query: req.body.movieFindtitle,
 		language: 'pt'
 	}
 	moviedb.searchMovie(movieFind).then(resp => {
-		for (var i = s0; i <10; i++) {
+		for (var j in String(resp.results.title)) {
 		movieSearchFoundTitle[i] = String(resp.results[i].title)
 		}
 		res.render("Search",{movieSearchFoundTitle:movieSearchFoundTitle})
@@ -18,3 +19,9 @@ app.post("/searchtitle", function(req, res){
 		console.log(erro)
 	})
 })
+
+
+
+		// 		String(res.results.title).forEach(element=>{
+		// 	movieSearchFoundTitle=element
+		// })
