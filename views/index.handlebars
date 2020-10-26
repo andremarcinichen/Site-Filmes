@@ -39,10 +39,10 @@
 			{{/each}}
 		</div>
 		<div class="col-1 border border-dark">
-			Resumo
+			Favoritos!
 			{{#each movieFoundId}}
 				<div class="row border border-dark h-10">
-					<input class="" type="checkbox" value="{{movieFound.favorite}}">
+					<input class="" type="checkbox" name="favorite" value="{{movieFound.movieFavorite}}" onclick="/" method="POST">
 				</div>
 			{{/each}}
 		</div>

@@ -1,0 +1,22 @@
+<div class="container mt-5">
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th scope="col">Titulo</th>
+				<th scope="col">Favorito</th>
+			</tr>
+		</thead>
+		<tbody>
+			{{#each movieFav}}
+		    <tr>
+				<td>{{this}}</td>
+				<td>
+					<div class="row border border-dark h-10">
+						<input type="checkbox" name="favorite" value="{{movieFav.movieFavorite}}" onclick="/" method="POST">
+					</div>
+				</td>
+		    </tr>
+		    {{/each}}
+		</tbody>
+	</table>
+</div>

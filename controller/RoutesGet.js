@@ -20,9 +20,14 @@ app.get('/', function(req, res){
 			}]
 		}
 		res.render("index",{movieFoundTitle,movieFoundVote,movieFoundId,movieFoundOverview,movieFound})
-		console.log(movieFound)
 	}).catch(function(erro){
 		res.send("Não foi possível encontrar seu filme, erro: " + erro)
 	})
 	
+})
+
+app.get("/Favoritos", function(req, res){
+	movieFav.findAll({order: [["title", "ASC"]]}).then(function(movieFav){
+		res.render("favorites", {movieFav: movieFav})
+	})
 })
