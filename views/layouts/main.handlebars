@@ -19,7 +19,14 @@
                             <a href="/" class="btn btn-secondary ml-3 mb-3" >Rated Top 10</a>
                         </li>
                         <li>
-                            
+                            <div method="GET" class="favoriteStatus">
+                            {{#if author}}
+                            <a href="/favoritemovies" class="btn btn-secondary ml-3 mb-3" >Seus favoritos!
+                            {{else}}
+                            <a href="/favoritemovies" class="btn btn-secondary ml-3 mb-3" >Seus favoritos!
+                            {{/if}}
+                            </div>    
+                            </a>
                         </li>
                      </ul>
                 </div>

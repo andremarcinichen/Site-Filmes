@@ -1,15 +1,14 @@
 //rotas post
 global.movieFind = []
-global.movieSearchFoundTitle =[]
-var x = []
-
 app.post("/searchtitle", function(req, res){
+	global.movieSearchFoundTitle =[]
 	movieFind={
 		query: req.body.movieFindtitle,
 		language: 'pt'
 	}
 	moviedb.searchMovie(movieFind).then(resp => {
-		for (var j in String(resp.results.title)) {
+		var y = Object.size(resp.results)
+		for (i =0; i<y ; i++) {
 		movieSearchFoundTitle[i] = String(resp.results[i].title)
 		}
 		res.render("Search",{movieSearchFoundTitle:movieSearchFoundTitle})
@@ -20,8 +19,21 @@ app.post("/searchtitle", function(req, res){
 	})
 })
 
-
-
-		// 		String(res.results.title).forEach(element=>{
-		// 	movieSearchFoundTitle=element
-		// })
+app.post("/searchtitle", function(req, res){
+	global.movieSearchFoundTitle =[]
+	movieFind={
+		query: req.body.movieFindtitle,
+		language: 'pt'
+	}
+	moviedb.searchMovie(movieFind).then(resp => {
+		var y = Object.size(resp.results)
+		for (i =0; i<y ; i++) {
+		movieSearchFoundTitle[i] = String(resp.results[i].title)
+		}
+		res.render("Search",{movieSearchFoundTitle:movieSearchFoundTitle})
+		return movieSearchFoundTitle
+	}).catch(function(erro){
+		res.render("MovieNotFound")
+		console.log(erro)
+	})
+})

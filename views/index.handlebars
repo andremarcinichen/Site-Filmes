@@ -1,31 +1,50 @@
-<div class="container mt-5">
-	<table class="table table-striped">
-		<thead>
-			<tr>
-				<th scope="col">Rank</th>
-				<th scope="col">Titulo</th>
-				<!-- <th scope="col">Nota</th>  -->
-				<th scope="col">Resumo</th>
-				<th scope="col">Favorito</th>
-			</tr>
-		</thead>
-		<tbody>
+<div class="container mt-2">
+	<div class ="row table table-striped">
+		<div class="col-2 border border-dark">
+			Classificação
 			{{#each movieFoundTitle}}
-		    <tr>
-		    	<td>{{inc @index}}</td>
-				<td>{{this}}</td>
-				<!-- <td>{{movieFoundvote}}</td> -->
-				<td>
-					<a href="" class="btn btn-danger">Informaçoes</a>
-				</td>
-				<td>
-					<div class="custom-control custom-checkbox ">
-					  <input type="checkbox" class="custom-control-input" id="customCheck{{@index}}">
-					  <label class="custom-control-label" for="customCheck{{@index}}"></label>
+				<div class="row border border-dark h-10">
+					<div class="ml-3">
+						{{inc @index}}
 					</div>
-				</td>
-		    </tr>
-		    {{/each}}
-		</tbody>
-	</table>
+				</div>
+			{{/each}}
+		</div>
+		<div class="col-5 border border-dark">
+			Titulo
+			{{#each movieFoundTitle}}
+				<div class="row  border border-dark h-10">
+					<div class="ml-3">
+						{{this}}
+					</div>
+				</div>
+			{{/each}}
+		</div>
+		<div class="col-2 border border-dark">
+			Nota media
+			{{#each movieFoundVote}}
+				<div class="row border border-dark h-10">
+					<div class="ml-3">
+						{{this}}
+					</div>
+				</div>
+			{{/each}}
+		</div>
+		<div class="col-2 border border-dark">
+			Resumo
+			{{#each movieFoundOverview}}
+				<div class="row border border-dark h-10">
+					clique aqui!
+				</div>
+			{{/each}}
+		</div>
+		<div class="col-1 border border-dark">
+			Resumo
+			{{#each movieFoundId}}
+				<div class="row border border-dark h-10">
+					<input class="" type="checkbox" value="{{movieFound.favorite}}">
+				</div>
+			{{/each}}
+		</div>
+	</div>
 </div>

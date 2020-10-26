@@ -3,6 +3,7 @@ global.Handlebars = require("handlebars")
 global.bodyParser = require("body-parser")
 const { MovieDb } = require('moviedb-promise')
 global.moviedb = new MovieDb('2ad68eb33d65b9eb718d5ca88fbb7b45')
+const Swal = require('sweetalert2')
 
 app.engine("handlebars", handlebars({defaultLayout: "main"}))
 app.set("view engine", "handlebars")

@@ -1,12 +1,15 @@
-// const db = require("./db")
+const db = require("./db")
 
-// global.movievar = define("movievar", {
-// 	query: {
-// 		type: STRING
-// 	},
-// 	lastname: {
-// 		type: STRING
-// 	}
-// })
-// // userinfo.sync({force: true})
-// module.exports = movievar
+global.movieFav = db.sequelize.define("movieFav", {
+	movieId: {
+		type: db.Sequelize.STRING
+	},
+	title: {
+		type: db.Sequelize.STRING
+	}
+})
+module.exports = movieFav
+if(movieFav == null)
+{
+movieFav.sync({force: true})
+}

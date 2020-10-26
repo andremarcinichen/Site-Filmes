@@ -3,7 +3,6 @@
 		<thead>
 			<tr>
 				<th scope="col">Titulo</th>
-				<!-- <th scope="col">Nota</th>  -->
 				<th scope="col">Resumo</th>
 				<th scope="col">Favorito</th>
 			</tr>
@@ -12,12 +11,11 @@
 			{{#each movieSearchFoundTitle}}
 		    <tr>
 				<td>{{this}}</td>
-				<!-- <td>{{movieFoundvote}}</td> -->
 				<td>
 					<a href="" class="btn btn-danger">Informaçoes</a>
 				</td>
 				<td>
-					<div class="custom-control custom-checkbox ">
+					<div class="custom-control custom-checkbox" action="/searchtitle" method="POST">
 					  <input type="checkbox" class="custom-control-input" id="customCheck{{@index}}">
 					  <label class="custom-control-label" for="customCheck{{@index}}"></label>
 					</div>
